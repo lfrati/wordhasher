@@ -19,7 +19,7 @@ if __name__ == "__main__":
                 if (
                     only_letters.match(opt)
                     and len(opt) > 3
-                    and len(opt) < 8
+                    and len(opt) < 9
                     and opt.islower()
                 ):
                     words[category].add(opt)
@@ -31,10 +31,10 @@ if __name__ == "__main__":
 
     with open("nouns.txt", "w") as f:
         for w in words["n"]:
-            f.write(w + "\\n")
+            f.write(w + "\n")
     with open("adjectives.txt", "w") as f:
         for w in words["a"]:
-            f.write(w + "\\n")
+            f.write(w + "\n")
     with open("verbs.txt", "w") as f:
         for w in words["v"]:
-            f.write(w + "\\n")
+            f.write(w + "\n")
