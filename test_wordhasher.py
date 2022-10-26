@@ -1,22 +1,22 @@
-from wordnetter import Wordnetter
+from wordhasher import WordHasher
 from tqdm import trange
 
-wnetter = Wordnetter()
+whash = WordHasher()
 print()
-wnetter.uninstall()
-wnetter.install()
+whash.uninstall()
+whash.install()
 
 test_string = "This is a test!"
-print(f"\n Test string: {test_string}\nWordnet-hash: {wnetter.encode(test_string)}\n")
+print(f"\n Test string: {test_string}\nWordnet-hash: {whash.encode(test_string)}\n")
 
 file = __file__
-print(f"Self encoding: {file}\n Wordnet-hash: {wnetter.encode_file(file)}\n")
+print(f"Self encoding: {file}\n Wordnet-hash: {whash.encode_file(file)}\n")
 
 print("Checking for collisions")
-N = 10_000_0
+N = 10_000_000
 seen = set()
 for i in trange(N):
-    sample = wnetter.sample()
+    sample = whash.sample()
     if sample not in seen:
         seen.add(sample)
     else:

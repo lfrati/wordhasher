@@ -4,13 +4,12 @@ import random
 import shutil
 
 import requests
-from tqdm import tqdm
 
 
-class Wordnetter:
+class WordHasher:
     def __init__(self):
 
-        self.storage = Path().home() / ".wordnetter"
+        self.storage = Path().home() / ".wordhasher"
         self.filenames = [
             self.storage / name for name in ["nouns.txt", "adjectives.txt", "verbs.txt"]
         ]
