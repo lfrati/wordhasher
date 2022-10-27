@@ -10,9 +10,9 @@ We are going to use [WordNet](https://wordnet.princeton.edu/) to get some words 
 from wordhasher import WordHasher
 whash = WordHasher()
 
-print(whash.encode("This is a test!")    # monkey-abeyant-boxthorn
-print(whash.encode_file("wordhasher.py") # proclaim-ablated-molting
-print(whash.sample())                    # infer-adoring-walkaway-542
+print(whash.encode("This is a test!"))    # monkey-abeyant-boxthorn
+print(whash.encode_file("wordhasher.py")) # proclaim-ablated-molting
+print(whash.sample())                     # infer-adoring-walkaway-542
 ```
 
 ## Credits
