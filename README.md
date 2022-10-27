@@ -12,7 +12,7 @@ whash = WordHasher()
 
 print(whash.encode("This is a test!")    # monkey-abeyant-boxthorn
 print(whash.encode_file("wordhasher.py") # proclaim-ablated-molting
-print(whash.encode("This is a test!")    # bundle-overshot-viewer-186
+print(whash.sample())                    # infer-adoring-walkaway-542
 ```
 
 ## Credits
