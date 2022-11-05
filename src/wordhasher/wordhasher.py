@@ -44,15 +44,3 @@ class WordHasher:
         assert all(m in self.modes for m in mode)
         parts = [self.samplers[m]() for m in mode]
         return "-".join(parts)
-
-
-if __name__ == "__main__":
-    whash = WordHasher()
-    m = "This is a test."
-    print(f"Hashing {m} = {whash.from_str(m)}")
-    print(f"Hashing {m} = {whash.from_str(m)}")
-    print(f"Hashing {__file__} = {whash.from_str(__file__)}")
-    print(f"Hashing {__file__} = {whash.from_str(__file__)}")
-    print("Default sample:", whash.sample())
-    for mode in ["va", "an", "anN", "van", "vanN"]:
-        print(f"  mode:{mode:<5}: {whash.sample(mode=mode)}")
