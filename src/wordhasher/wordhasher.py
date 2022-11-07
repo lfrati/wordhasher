@@ -1,15 +1,16 @@
 import hashlib
 import random
+import importlib.resources as pkg_resources
 
 
 class WordHasher:
     def __init__(self):
-        with open("nouns.txt", "r") as f:
-            self.nouns = f.read().splitlines()
-        with open("adjectives.txt", "r") as f:
-            self.adjectives = f.read().splitlines()
-        with open("verbs.txt", "r") as f:
-            self.verbs = f.read().splitlines()
+        # https://dev.to/bowmanjd/easily-load-non-python-data-files-from-a-python-package-2e8g
+        self.nouns = pkg_resources.read_text(__package__, "nouns.txt").splitlines()
+        self.adjectives = pkg_resources.read_text(
+            __package__, "adjectives.txt"
+        ).splitlines()
+        self.verbs = pkg_resources.read_text(__package__, "verbs.txt").splitlines()
 
         self.samplers = {
             "v": lambda: self.verbs[random.randrange(len(self.verbs))],
@@ -44,3 +45,10 @@ class WordHasher:
         assert all(m in self.modes for m in mode)
         parts = [self.samplers[m]() for m in mode]
         return "-".join(parts)
+
+    def __repr__(self):
+        r = f"{self.__class__.__name__}:\n"
+        r += f"       nouns: {len(self.nouns)}\n"
+        r += f"  adjectives: {len(self.adjectives)}\n"
+        r += f"       verbs: {len(self.verbs)}\n"
+        return r

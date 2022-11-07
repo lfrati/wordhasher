@@ -1,0 +1,1 @@
+from .wordhasher import WordHasher

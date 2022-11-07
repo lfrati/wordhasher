@@ -7,12 +7,23 @@ We are going to use [WordNet](https://wordnet.princeton.edu/) to get some words 
 
 # Example
 ``` python
-from wordhasher import WordHasher
-whash = WordHasher()
-
-print(whash.encode("This is a test!"))    # monkey-abeyant-boxthorn
-print(whash.encode_file("wordhasher.py")) # proclaim-ablated-molting
-print(whash.sample())                     # infer-adoring-walkaway-542
+>>> from wordhasher import WordHasher
+>>> wh = WordHasher()
+>>> print(wh)
+WordHasher:
+     nouns: 21252
+adjectives: 7395
+     verbs: 5905
+>>> wh.from_str('This is a test.') 
+catnap-abatic-upshot
+>>> wh.from_str(__file__)
+syphon-abashed-decidua
+>>> wh.sample()
+keep-vain-smugness-247
+>>> wh.sample(mode="an")
+inviting-patrial
+>>> wh.sample(mode="anN")
+unsaved-asshole-908
 ```
 
 ## Credits
