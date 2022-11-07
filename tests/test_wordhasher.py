@@ -1,6 +1,5 @@
 from itertools import chain, combinations
 import pytest
-from tqdm import trange
 
 from wordhasher import *
 
@@ -20,7 +19,7 @@ def test_collisions():
     wh = WordHasher()
     N = 1_000_000
     seen = set()
-    for i in trange(N):
+    for i in range(N):
         sample = wh.sample()
         if sample not in seen:
             seen.add(sample)
