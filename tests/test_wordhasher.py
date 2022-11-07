@@ -1,4 +1,5 @@
 from itertools import chain, combinations
+
 import pytest
 
 from wordhasher import *
