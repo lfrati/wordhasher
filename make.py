@@ -19,7 +19,7 @@ if __name__ == "__main__":
                 if (
                     only_letters.match(opt)
                     and len(opt) > 3
-                    and len(opt) < 9
+                    and len(opt) < 7
                     and opt.islower()
                 ):
                     words[category].add(opt)
@@ -28,6 +28,8 @@ if __name__ == "__main__":
 
     for cat, ws in words.items():
         print(cat, len(ws))
+
+    print(f"{9698 * 3644 * 2872:_} possibilities")
 
     with open("nouns.txt", "w") as f:
         for w in words["n"]:
