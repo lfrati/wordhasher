@@ -11,9 +11,9 @@ We are going to use [WordNet](https://wordnet.princeton.edu/) to get some words 
 >>> wh = WordHasher()
 >>> print(wh)
 WordHasher:
-     nouns: 21252
-adjectives: 7395
-     verbs: 5905
+     nouns: 9698
+adjectives: 3644
+     verbs: 2872
 >>> wh.from_str('This is a test.') 
 catnap-abatic-upshot
 >>> wh.from_str(__file__)
